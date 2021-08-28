@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/*
+ * Top Progress Bar
+ */
+
+ .top-progress-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 4px;
+    width: 0%;
+    transition: width 0.2s, opacity 0.4s;
+    opacity: 0;
+    z-index: 999999;
+}
+
+.menu .router-link-active{
+  @apply bg-gray-700
+}

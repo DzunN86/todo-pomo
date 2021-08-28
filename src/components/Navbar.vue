@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-900 min-h-screen">
-    <nav class="w-full flex relative text-white justify-between items-center mx-auto px-8 lg:px-24 h-20">
+    <nav class=" w-full flex relative text-white justify-between items-center mx-auto px-8 lg:px-24 h-20">
     <!-- logo -->
     <div class="inline-flex">
             <router-link exact to="/">
@@ -28,9 +28,9 @@
           </router-link>
         </div>
 
-        <div class="block">
+        <!-- <div class="block">
             <div class="inline relative">
-                <button type="button" class="inline-flex items-center relative px-2 border rounded-full" @click="$router.push('/profile')">
+                <button type="button" class="inline-flex items-center relative px-2 border rounded-full">
                     <div class="pl-1">
                         <svg
                             viewBox="0 0 32 32"
@@ -62,12 +62,11 @@
                     </div>
                 </button>
             </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- end login -->
 </nav>
-<router-view />
   </div>
 </template>
 

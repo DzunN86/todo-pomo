@@ -6,8 +6,11 @@ import store from './store'
 
 import './assets/tailwind.css'
 
-import vueTopprogress from 'vue-top-progress'
-Vue.use(vueTopprogress)
+import TopProgressBar from "@/components/TopProgressBar.vue";
+
+/* GLOBAL PROGRESS-BAR ELEMENT */
+const bar = (Vue.prototype.$topprogressbar = new Vue(TopProgressBar).$mount());
+document.body.appendChild(bar.$el);
 
 Vue.config.productionTip = false
 

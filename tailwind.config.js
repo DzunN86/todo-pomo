@@ -17,5 +17,9 @@ module.exports = {
         maxHeight: ['focus'],
       },
     },
-    plugins: [],
+    plugins: [
+      require("@tailwindcss/forms")({
+        strategy: 'class',
+      }),
+    ],
   }

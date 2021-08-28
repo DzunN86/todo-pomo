@@ -40,6 +40,13 @@
 <script>
 
 export default {
-  name: 'Home'
+  mounted () {
+    this.$topprogressbar.start();
+ 
+    // Use setTimeout for demo
+    setTimeout(() => {
+      this.$topprogressbar.finish(), 1000
+    })
+  },
 }
 </script>
