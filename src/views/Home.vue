@@ -27,7 +27,7 @@
             </div>
             <div class="w-full lg:w-3/5 lg:-mr-24">
                 <div class="relative py-3 sm:max-w-xl sm:mx-auto hidden lg:block">
-                  <img src="@/assets/img-hero-3.png" alt="Nekoding" class="w-10/12" />
+                  <img src="@/assets/img-hero.png" alt="Nekoding" class="w-full" />
                 </div>
             </div>
         </div>

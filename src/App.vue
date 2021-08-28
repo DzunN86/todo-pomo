@@ -1,12 +1,14 @@
 <template>
-  <div class="bg-gradient-to-br from-gray-700 to-gray-900 min-h-screen">
+  <div class="bg-gradient-to-br from-blue-700 to-blue-900 min-h-screen">
     <vue-topprogress ref="topProgress" color="#F97316"></vue-topprogress>
     <nav class=" w-full flex relative text-white justify-between items-center mx-auto px-8 lg:px-24 h-20">
     <!-- logo -->
     <div class="inline-flex">
         <a class="_o6689fn" href="/">
           <div class="hidden md:block">
+            <router-link to="/">
                 <span class="text-2xl uppercase font-bold">📅 Todo.</span>
+            </router-link>
             </div>
             <div class="block md:hidden">
                 <span class="text-2xl uppercase font-bold">📅 Todo.</span>
@@ -21,12 +23,12 @@
       <div class="flex justify-end items-center relative">
        
         <div class="flex mr-4 items-center">
-          <a class="inline-block py-2 px-3 hover:bg-blue-900 rounded-lg mr-3" href="#">
+          <router-link class="inline-block py-2 px-3 hover:bg-blue-900 rounded-lg mr-3" to="/login">
             <div class="flex items-center relative cursor-pointer whitespace-nowrap">Login</div>
-          </a>
-          <a class="inline-block py-2 px-3 hover:bg-blue-900 rounded-lg" href="#">
+          </router-link>
+          <router-link class="inline-block py-2 px-3 hover:bg-blue-900 rounded-lg" to="/login">
             <div class="flex items-center relative cursor-pointer whitespace-nowrap">Register</div>
-          </a>
+          </router-link>
         </div>
 
         <div class="block">
