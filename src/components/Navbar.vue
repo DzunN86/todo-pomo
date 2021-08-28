@@ -1,6 +1,5 @@
 <template>
-  <div class="bg-gray-900 min-h-screen">
-    <nav class=" w-full flex relative text-white justify-between items-center mx-auto px-8 lg:px-24 h-20">
+    <nav class="w-full flex relative text-gray-800 justify-between items-center mx-auto px-8 lg:px-24 h-20">
     <!-- logo -->
     <div class="inline-flex">
             <router-link exact to="/">
@@ -20,10 +19,10 @@
       <div class="flex justify-end items-center relative">
        
         <div class="menu flex mr-4 items-center">
-          <router-link class="inline-block py-2 px-3 hover:bg-gray-500 rounded-md mr-3" exact to="/login">
+          <router-link class="inline-block py-2 px-3 hover:bg-gray-200 rounded-md mr-3" exact to="/login">
             <div class="flex items-center relative cursor-pointer whitespace-nowrap">Login</div>
           </router-link>
-          <router-link class="inline-block py-2 px-3 hover:bg-gray-500 rounded-md" exact to="/register">
+          <router-link class="inline-block py-2 px-3 hover:bg-gray-200 rounded-md" exact to="/register">
             <div class="flex items-center relative cursor-pointer whitespace-nowrap">Register</div>
           </router-link>
         </div>
@@ -67,7 +66,6 @@
     </div>
     <!-- end login -->
 </nav>
-  </div>
 </template>
 
 <script>

@@ -1,0 +1,224 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+// body {
+//   // font-family: 'Poppins', sans-serif;
+//   background-color: #ffffff;
+// }
+
+.card-dash {
+  border: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  // border-left: 3px solid ;
+  color: white;
+
+  .card-footer {
+    background-color: #ffffff;
+    opacity: 0.6;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+.border-left-success {
+  // border-left-color: #145523;
+  background-color: #288e3f;
+}
+.border-left-primary {
+  // border-left-color: #03448a;
+  background-color: #066fe0;
+}
+.border-left-info {
+  // border-left-color: #016172;
+  background-color: #17A2B8;
+}
+.border-left-danger {
+  // border-left-color: #8f212b;
+  background-color: #dc3545;
+}
+.border-left-warning {
+  // border-left-color: #8f4507;
+  background-color: #EF7108;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 55px 0 0; /* Height of navbar */
+  // box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  transition: all 0.5s ease 0s;
+}
+
+
+
+@media (max-width: 992px) {
+  .navbar-collapse{
+  &  .sidebar {
+      max-width: 230px;
+      left: -100%;
+      padding: 35px 0 0 0;
+      //top: 5rem;
+    }
+  }
+  .navbar-collapse.show {
+    & .sidebar {
+      left: 0;
+    }
+  }
+}
+
+.sidebar-sticky {
+  white-space: nowrap;
+  position: absolute;
+  left: 0;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+  padding: .5rem 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #5c5c5c;
+  font-size: 1rem;
+  // transition: all 0.5s ease;
+  // margin-bottom: px;
+}
+
+.sidebar .nav-link:hover {
+  // padding-left: 30px;
+  //color: #4FA746;
+  svg{
+    color: #4FA746;
+  }
+}
+
+.sidebar .nav-link.router-link-active {
+  color: #4FA746;
+}
+
+.sidebar .nav-link svg {
+  margin-right: 1.1rem;
+  transition: all 0.5s ease;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.router-link-active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  width: 230px;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .25);
+  // background-color: #ffffff;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar-brand .contain {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand .contain {
+    left: 0;
+  }
+}
+
+.navbar-brand .toggler {
+  position: absolute;
+  top: .7rem;
+  left: 1.5rem;
+
+  button {
+    border: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar-brand .title {
+  padding-left: 3.5rem;
+}
+
+.navbar-brand img {
+  cursor: pointer;
+  height: 1.75em;
+  padding-left: .5rem;
+  position: absolute;
+  left: 1em;
+  top: 0.7em;
+}
+
+/* override dropdown menu in all media screen */
+.navbar-nav .dropdown-menu {
+  position: absolute !important;
+}
+
+.navbar-nav .nav-item .user-image{
+  float: left;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+.cp{
+  cursor: pointer;
+}
+
+/*
+ * Content
+ */
+
+[role='main'] {
+  margin-top: 9px; /* Space 60px for fixed 50px top navbar */
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  [role='main'] {
+    margin-top: 5px; /* Space 45px for fixed 35px top navbar small */
+    padding-bottom: 2rem;
+  }
+}
