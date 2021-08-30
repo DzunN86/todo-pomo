@@ -7,7 +7,7 @@
 
 .card-dash {
   border: 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  // box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   // border-left: 3px solid ;
   color: white;
 
@@ -52,8 +52,9 @@
   left: 0;
   z-index: 100; /* Behind the navbar */
   padding: 55px 0 0; /* Height of navbar */
-  // box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   transition: all 0.5s ease 0s;
+  background-color: #FAFAFA;
 }
 
 
@@ -94,7 +95,8 @@
 }
 
 .sidebar .nav-link {
-  font-weight: 500;
+  // font-weight: 500;
+  @apply font-medium;
   color: #5c5c5c;
   font-size: 1rem;
   // transition: all 0.5s ease;
@@ -105,12 +107,12 @@
   // padding-left: 30px;
   //color: #4FA746;
   svg{
-    color: #4FA746;
+    color: #407AEF;
   }
 }
 
 .sidebar .nav-link.router-link-active {
-  color: #4FA746;
+  color: #407AEF;
 }
 
 .sidebar .nav-link svg {
@@ -138,9 +140,9 @@
   padding-bottom: .75rem;
   font-size: 1rem;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, .25);
+  // background-color: rgba(0, 0, 0, .25);
   // background-color: #ffffff;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  // box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
 }
 
 .navbar-brand .contain {

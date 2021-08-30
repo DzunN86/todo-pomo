@@ -5,8 +5,12 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-
 import titleMixin from "./mixins/title";
+
+import VueRouteMiddleware from "vue-route-middleware";
+import AuthMiddleware from "./router/middlewares/auth";
+import GuestMiddleware from "./router/middlewares/guest";
+
 
 
 import './assets/tailwind.css'
@@ -18,6 +22,8 @@ const bar = (Vue.prototype.$topprogressbar = new Vue(TopProgressBar).$mount());
 document.body.appendChild(bar.$el);
 
 Vue.config.productionTip = false
+
+router.beforeEach(VueRouteMiddleware({ AuthMiddleware, GuestMiddleware }));
 
 
 /* GLOBAL MIXIN */

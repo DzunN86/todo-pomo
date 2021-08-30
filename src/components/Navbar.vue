@@ -1,15 +1,15 @@
 <template>
-    <nav class="w-full flex relative text-gray-800 justify-between items-center mx-auto px-8 lg:px-24 h-20">
+    <nav class="w-full flex relative text-white justify-between items-center mx-auto px-8 lg:px-24 h-20">
     <!-- logo -->
     <div class="inline-flex">
-            <router-link exact to="/">
+            <button @click="$router.push('/')">
           <div class="hidden md:block">
-                <span class="text-2xl uppercase font-bold">📅 Todo.</span>
+                <span class="text-2xl font-bold">📅 WannaBe</span>
             </div>
             <div class="block md:hidden">
                 <span class="text-2xl uppercase font-bold">📅 Todo.</span>
             </div>
-            </router-link>
+            </button>
     </div>
 
     <!-- end logo -->

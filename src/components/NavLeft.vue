@@ -1,6 +1,6 @@
 <template>
   <div class="navbar-collapse" :class="isVisibleSidebar && 'show'">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar bg-light">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block  sidebar">
       <div class="sidebar-sticky pt-2">
         <ul class="nav flex-column">
           <template v-for="(node, indexRoot) in MenuSchema">
@@ -16,7 +16,7 @@
                   align-items-center
                   px-3
                   mt-4
-                  mb-1
+                  mb-3
                   text-muted
                 "
                 aria-invalid="true"

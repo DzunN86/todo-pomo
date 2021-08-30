@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white min-h-screen">
+  <div class="">
     <router-view />
   </div>
 </template>
@@ -10,8 +10,4 @@
 
 <style>
 
-</style>
-
-<style lang="scss">
-// @import "./assets/css/main.scss";
 </style>

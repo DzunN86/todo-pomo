@@ -1,14 +1,12 @@
 <template>
   <div>
     <nav
-    style="background-color: #EA7227"
       class="
+      bg-gradient-to-r from-blue-500 to-blue-800
         navbar navbar-dark
-        shadow
         fixed-top
         flex-md-nowrap
         p-0
-        shadow-sm
       "
     >
       <div class="navbar-brand col-lg-2 mr-0 text-white">
@@ -32,7 +30,7 @@
             alt="logo"
             width="35"
           />
-          <span class="title">Surat Pesantren</span>
+          <span class="title font-semibold text-md">Wanna Be</span>
         </router-link>
       </div>
       <div style="position: absolute; right: 5px; top: 4px; display: flex">
@@ -47,24 +45,23 @@
               aria-haspopup="true"
               :aria-expanded="isVisibleDropdown ? 'true' : 'false'"
             >
-              <!-- <img
-                src="@/assets/img/default-avatar.png"
+              <img
+                src="@/assets/default-avatar.jpg"
                 class="user-image"
                 alt="user image"
-              /> -->
-              Si Admin
+              />
             </a>
             <ul
               class="dropdown-menu dropdown-menu-right"
               :class="isVisibleDropdown && 'show'"
             >
-              <li role="presentation">
+              <!-- <li role="presentation">
                 <a class="dropdown-item">
                   <h6>Si Admin</h6>
                   <p style="font-size: 12px">@admin123</p>
                 </a>
-              </li>
-              <hr style="margin-top: 0" />
+              </li> -->
+              <!-- <hr style="margin-top: 0" /> -->
               <li role="presentation">
                 <router-link to="/logout" class="dropdown-item" role="menuitem"
                   >Profile</router-link

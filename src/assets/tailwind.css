@@ -7,6 +7,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+
 /*
  * Top Progress Bar
  */
@@ -24,5 +25,11 @@ body {
 }
 
 .menu .router-link-active{
-  @apply bg-gray-300
+  @apply bg-blue-900;
+  text-decoration: none;
+  color: white;
+}
+
+.router-link{
+  text-decoration: none;
 }

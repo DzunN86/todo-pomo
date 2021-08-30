@@ -18,7 +18,7 @@ export default {
   created() {
     const title = getTitle(this);
     if (title) {
-      document.title = title + " - Surat PP. Nurul Jadid";
+      document.title = title + " - Wanna Be";
     }
   },
 
@@ -27,7 +27,7 @@ export default {
       // Dibutuhkan jika ada perubahan title saat ada perubahan query url
       const title = getTitle(this);
       if (title) {
-        document.title = title + " - Surat Pesantren PP. Nurul Jadid";
+        document.title = title + " - Wanna Be";
       }
     },
   },

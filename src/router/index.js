@@ -1,44 +1,110 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import Axios from "../plugins/axios-vue";
+import Store from "../store";
 
-Vue.use(VueRouter)
+import AuthLayout from "@/layouts/AuthLayout";
+import FullLayout from "@/layouts/FullLayout";
+
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    component: FullLayout,
+    children: [
+      {
+        path: "",
+        name: "📌Wanna Be",
+        component: Home,
+        meta: {
+          middleware: ["GuestMiddleware"]
+        }
+      },
+      {
+        path: "/login",
+        name: "Login",
+        component: () => import("../views/Login.vue"),
+        meta: {
+          middleware: ["GuestMiddleware"]
+        }
+      },
+      {
+        path: "/register",
+        name: "Register",
+        component: () => import("../views/Register.vue"),
+        meta: {
+          middleware: ["GuestMiddleware"]
+        }
+      },
+    ],
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/",
+    component: AuthLayout,
+    children: [
+      {
+        path: "",
+        name: "Dashboard",
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/Dashboard.vue"),
+        meta: {
+          middleware: ["AuthMiddleware"],
+        },
+      },
+      {
+        path: "/allactivities",
+        name: "All Activities",
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/AllActivities.vue"),
+        meta: {
+          middleware: ["AuthMiddleware"],
+        },
+      },
+      {
+        path: "/activities/work",
+        name: "Work",
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/Work.vue"),
+        meta: {
+          middleware: ["AuthMiddleware"],
+        },
+      },
+      {
+        path: "/activities/learn",
+        name: "Learn",
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/Learn.vue"),
+        meta: {
+          middleware: ["AuthMiddleware"],
+        },
+      },
+      {
+        path: "/activities/play",
+        name: "Play",
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/Play.vue"),
+        meta: {
+          middleware: ["AuthMiddleware"],
+        },
+      }
+    ]
   },
   {
-    path: '/login',
-    name: 'Login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    path: "/logout",
+    name: "Logout",
+    beforeEnter: (to, from, next) => {
+      Axios.post("/logout/admin", {
+        disableExptimestamp: true,
+        disableErrNotif: true,
+      }).catch(() => {});
+      Store.commit("setToken", "");
+      Store.commit("setExptimestamp", 0);
+      next("/");
+    },
   },
-  {
-    path: '/register',
-    name: 'Register',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue')
-  },
-  {
-    path: '/profile',
-    name: 'Dashboard',
-    component: () => import(/* webpackChunkName: "about" */ '../views/User/Dashboard.vue')
-  }
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

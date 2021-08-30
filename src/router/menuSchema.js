@@ -6,35 +6,27 @@ export default [
     isExactActive: true,
   },
   {
-    label: "Scan QRCode",
-    link: "qrcode",
-    icon: ["fas", "qrcode"],
+    label: "All Activities",
+    link: "/allactivities",
+    icon: ["fas", "tasks"],
   },
   {
-    label: "Buat Surat",
-    link: "/create-surat",
-    icon: ["fas", "envelope-open-text"],
-    meta: {
-      layout: "full-layout",
-    },
-  },
-  {
-    labelHeading: "Manajemen Surat",
+    labelHeading: "Category Activities",
     children: [
       {
-        label: "Surat Keluar",
-        link: "/surat-keluar",
-        icon: ["fas", "envelope-open"],
+        label: "Work",
+        link: "/activities/work",
+        icon: ["fas", "briefcase"],
       },
       {
-        label: "Surat Masuk",
-        link: "/surat-masuk",
-        icon: ["fas", "envelope"],
+        label: "Learn",
+        link: "/activities/learn",
+        icon: ["fas", "book-open"],
       },
       {
-        label: "Disposisi",
-        link: "/disposisi",
-        icon: ["fas", "file-alt"],
+        label: "Play",
+        link: "/activities/play",
+        icon: ["fas", "gamepad"],
       },
     ],
   },
