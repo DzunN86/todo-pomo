@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import axios from "./plugins/axios-vue";
 import "./plugins"; /* perlu diletakkan paling atas */
 import App from './App.vue'
 import './registerServiceWorker'
@@ -23,6 +24,7 @@ Vue.config.productionTip = false
 Vue.mixin(titleMixin); // for handling document.title
 
 new Vue({
+  axios,
   router,
   store,
   render: h => h(App)
