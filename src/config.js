@@ -2,8 +2,11 @@
 
 export default {
     baseUrlApi: process.env.NODE_ENV === 'production'
-    ? 'http://127.0.0.1:8000/api'
-      : 'http://127.0.0.1:8000/api',
+    ? 'https://salty-anchorage-33077.herokuapp.com/api'
+      : 'https://salty-anchorage-33077.herokuapp.com/api',
+      
+    // ? 'http://127.0.0.1:8000/api'
+    //   : 'http://127.0.0.1:8000/api',
   
   
     app: {
