@@ -62,7 +62,7 @@
             <button class="btn btn-success btn-sm mr-2" @click="action">
               Update
             </button>
-            <button class="btn btn-danger btn-sm mr-2" @click="action">
+            <button class="btn btn-danger btn-sm mr-2" @click="deleteId()">
               Delete
             </button>
             <button
@@ -144,7 +144,7 @@ export default {
       doit();
     },
 
-    deleteId(item) {
+    deleteId() {
       this.$root.$emit("setNotif", {
         title: "Yakin Hapus ?",
         type: "warning",
@@ -155,14 +155,14 @@ export default {
 
         onConfirm: () => {
           this.$axios
-            .delete(`/admin/${item.id_admin}`)
+            .delete(`/activity/${this.form.id}`)
             .then((res) => {
               this.$root.$emit("setNotif", {
                 title: res.data.status,
-                message: res.data.deskripsi,
+                message: res.data.message,
                 type: "success",
               });
-              this.getOperators();
+              this.$router.push("/allactivities");
             })
             .catch(() => {});
         },

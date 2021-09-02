@@ -32,7 +32,7 @@
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
       </form>
     </div>
   </div>
