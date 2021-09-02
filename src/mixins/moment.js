@@ -7,7 +7,7 @@ export default {
     // for common use
     formatDate(val, formatStr = Moment.defaultFormat) {
       if (!val) {
-        return "-";
+        return " ";
       }
 
       return Moment(val).format(formatStr);

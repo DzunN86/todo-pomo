@@ -55,7 +55,7 @@
                 <date-picker
                   valueType="format"
                   placeholder="End"
-                  v-model="form.end"
+                  v-model="form.finish"
                 ></date-picker>
               </div>
             </div>
@@ -89,7 +89,7 @@ export default {
           name: this.form.name,
           desc: this.form.desc,
           start: this.form.start,
-          end: this.form.end,
+          finish: this.form.finish,
           user_id: 1,
           category_id: this.form.category,
         };

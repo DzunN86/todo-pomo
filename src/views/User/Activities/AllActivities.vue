@@ -34,11 +34,11 @@
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ activity.name }}</h5>
             <div>
-              <small class="">{{ formatDate(activity.start) }}</small> 
-              <small>{{ formatDate(activity.end) }}</small>
+              <small class="">{{ formatDate(activity.start) }}</small> -
+              <small>{{ formatDate(activity.finish) }}</small>
             </div>
           </div>
-          <p class="mb-1">Some placeholder content in a paragraph.</p>
+          <p class="mb-1">{{activity.desc}}</p>
           <small>And some small print.</small>
         </button>
       </div>
