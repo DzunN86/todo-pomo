@@ -150,7 +150,7 @@ export default {
           if (token) {
             this.$axios.defaults.headers["Authorization"] = token;
             this.$store.commit("setToken", token);
-            this.$router.push({ name: "Dashboard" });
+            // this.$router.push({ name: "Dashboard" });
           }
         })
         .catch((err) => {

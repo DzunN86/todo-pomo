@@ -122,7 +122,7 @@ export default {
           if (res.data.token) {
             this.$axios.defaults.headers["Authorization"] = token;
             this.$store.commit("setToken", token);
-            this.$router.push('/addactivity');
+            // this.$router.push('/addactivity');
           }
         })
         .catch((err) => {
