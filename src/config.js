@@ -15,7 +15,7 @@ export default {
       // sehingga membuat semua width-bar sama disemua chart.
       barWidth: 30,
       line: {
-        legend: 'none', // { position: 'bottom', alignment: 'center' }
+        legend: { position: 'top', alignment: 'end' },
         animation: {
           startup: true,
           duration: 1000,
@@ -23,13 +23,12 @@ export default {
         },
         chartArea: {
           left: 50,
-          top: 10,
+          top: 50,
+          bottom: 50,
           width: '100%',
           height: '75%',
         },
         hAxis: {
-          slantedText: true,
-          slantedTextAngle: 40,
           textStyle: {
             color: '#00539f',
             // fontSize: 14,

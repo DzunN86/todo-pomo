@@ -51,9 +51,6 @@ export default new Vuex.Store({
     token: "",
     loading: false,
     exptimestamp: 0,
-    config: {
-      viewMode: config.app.viewMode,
-    },
   },
   mutations: {
     setInitAuthCheck(state, val) {

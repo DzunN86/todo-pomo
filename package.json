@@ -16,7 +16,9 @@
     "@tailwindcss/postcss7-compat": "^2.2.7",
     "autoprefixer": "9",
     "axios": "^0.21.1",
+    "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
+    "moment": "^2.29.1",
     "postcss": "7",
     "register-service-worker": "^1.7.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
@@ -25,8 +27,9 @@
     "vue-route-middleware": "^1.0.7",
     "vue-router": "^3.2.0",
     "vue-simple-alert": "^1.1.1",
+    "vue2-datepicker": "^3.10.1",
     "vuex": "^3.4.0",
-    "bootstrap-vue": "^2.15.0"
+    "vue2-simplert": "^1.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -34,8 +37,8 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "vue-template-compiler": "^2.6.11",
     "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
   }
 }

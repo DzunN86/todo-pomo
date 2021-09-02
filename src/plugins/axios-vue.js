@@ -6,7 +6,7 @@ import Config from "../config";
 const token = Store.state.token ? Store.state.token : undefined;
 
 const AxiosInstance = Axios.create({
-  baseURL: Config.baseUrlApi, //"http://127.0.0.1:3009/api/",
+  baseURL: "http://127.0.0.1:8000/api",
   timeout: 10000,
   withCredentials: false,
   headers: {

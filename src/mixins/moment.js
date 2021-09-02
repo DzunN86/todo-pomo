@@ -1,6 +1,6 @@
 import Moment from "moment";
 import "moment/locale/id";
-Moment.defaultFormat = "DD MMM YYYY, HH:mm:ss";
+Moment.defaultFormat = "DD MMM YYYY";
 
 export default {
   methods: {

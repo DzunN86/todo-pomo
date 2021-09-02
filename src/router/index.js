@@ -55,10 +55,36 @@ const routes = [
       {
         path: "/allactivities",
         name: "All Activities",
-        component: () => import(/* webpackChunkName: "about" */ "../views/User/AllActivities.vue"),
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/Activities/index.vue"),
         meta: {
           middleware: ["AuthMiddleware"],
         },
+        children: [
+          {
+            path: "",
+            name: "All Activities",
+            component: () => import(/* webpackChunkName: "about" */ "../views/User/Activities/AllActivities.vue"),
+            meta: {
+              middleware: ["AuthMiddleware"],
+            },
+          },
+          {
+            path: "/addactivity",
+            name: "Add Activity",
+            component: () => import(/* webpackChunkName: "about" */ "../views/User/Activities/AddActiv.vue"),
+            meta: {
+              middleware: ["AuthMiddleware"],
+            },
+          },
+          {
+            path: "/viewactivity/:id",
+            name: "View Activity",
+            component: () => import(/* webpackChunkName: "about" */ "../views/User/Activities/EditActiv.vue"),
+            meta: {
+              middleware: ["AuthMiddleware"],
+            },
+          },
+        ]
       },
       {
         path: "/activities/work",
@@ -80,6 +106,14 @@ const routes = [
         path: "/activities/play",
         name: "Play",
         component: () => import(/* webpackChunkName: "about" */ "../views/User/Play.vue"),
+        meta: {
+          middleware: ["AuthMiddleware"],
+        },
+      },
+      {
+        path: "/profile",
+        name: "Profile",
+        component: () => import(/* webpackChunkName: "about" */ "../views/User/Profile.vue"),
         meta: {
           middleware: ["AuthMiddleware"],
         },

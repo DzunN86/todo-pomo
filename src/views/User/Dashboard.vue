@@ -16,13 +16,13 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">All Activities</h5>
-                  <h3 class="text-bold-600">122</h3>
+                  <h3 class="text-bold-600">{{dashboard.total.learn}}</h3>
                 </div>
               </div>
             </div>
             <div class="card-footer text-muted text-right">
-              <router-link style="color: #428e40;" to="surat-masuk">
-                <span aria-disabled="true">Selengkapnya</span>
+              <router-link style="color: #428e40;" to="/allactivities">
+                <span aria-disabled="true">See more</span>
                 <fa-icon
                   :icon="['fas', 'arrow-circle-right']"
                   class="ml-2"
@@ -46,13 +46,13 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Work</h5>
-                  <h3 class="text-bold-600">34</h3>
+                  <h3 class="text-bold-600">{{dashboard.total.work}}</h3>
                 </div>
               </div>
             </div>
             <div class="card-footer text-muted text-right">
-              <router-link style="color: #3a6fe1;" to="surat-keluar">
-                <span aria-disabled="true">Selengkapnya</span>
+              <router-link style="color: #3a6fe1;" to="/activities/work">
+                <span aria-disabled="true">See more</span>
                 <fa-icon
                   :icon="['fas', 'arrow-circle-right']"
                   class="ml-2"
@@ -76,13 +76,13 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Learn</h5>
-                  <h3 class="text-bold-600">322</h3>
+                  <h3 class="text-bold-600">{{dashboard.total.learn}}</h3>
                 </div>
               </div>
             </div>
             <div class="card-footer text-muted text-right">
-              <router-link style="color: #dc3545;" to="disposisi">
-                <span aria-disabled="true">Selengkapnya</span>
+              <router-link style="color: #dc3545;" to="/activities/learn">
+                <span aria-disabled="true">See more</span>
                 <fa-icon
                   :icon="['fas', 'arrow-circle-right']"
                   class="ml-2"
@@ -106,13 +106,13 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Play</h5>
-                  <h3 class="text-bold-600">179</h3>
+                  <h3 class="text-bold-600">{{dashboard.total.play}}</h3>
                 </div>
               </div>
             </div>
             <div class="card-footer text-right">
-              <router-link style="color: #e97027;" to="users">
-                <span aria-disabled="true">Selengkapnya</span>
+              <router-link style="color: #e97027;" to="/activities/play">
+                <span aria-disabled="true">See more</span>
                 <fa-icon
                   :icon="['fas', 'arrow-circle-right']"
                   class="ml-2"
@@ -123,11 +123,53 @@
         </div>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-body">
+        <GChart
+      type="ColumnChart"
+      :data="chartData"
+      :options="$App.config.chartOptions.line"
+      style="height: 500px;"
+    />
+      </div>
+    </div>
   </div>
 </template>
 <script>
-
+import { GChart } from "vue-google-charts";
 export default {
+  components: {
+    GChart
+  },
+  data() {
+    return{
+      dashboard:{},
+      chartData: [
+        ["Year", "total", "Sales", "Expenses", "Profit"],
+        ["2014", 100, 400, 200, 800],
+        ["2014", 100, 400, 200, 800],
+        ["2014", 100, 400, 200, 800],
+        ["2014", 100, 400, 200, 2000],
+        ["2014", 100, 400, 200, 800],
+        ["2014", 100, 400, 200, 500],
+        ["2014", 100, 400, 200, 700],
+        ["2014", 100, 400, 200, 100],
+        ["2014", 100, 400, 200, 200],
+        ["2014", 100, 400, 200, 800],
+        ["2014", 100, 400, 200, 800],
+        ["2015", 117, 460, 250, 222],
+        ["2016", 660, 1120, 300, 222],
+        ["2017", 103, 540, 350, 222]
+      ],
+      chartOptions: {
+        chart: {
+          title: "Company Performance",
+          subtitle: "Sales, Expenses, and Profit: 2014-2017"
+        }
+      }
+    }
+  },
   mounted () {
     this.$topprogressbar.start();
  
@@ -135,6 +177,29 @@ export default {
     setTimeout(() => {
       this.$topprogressbar.finish(), 1000
     })
+  },
+
+  computed : {
+
+  },
+
+  methods: {
+    getDashboard() {
+      this.$topprogressbar.start();
+      this.$axios
+        .get("/stats")
+        .then((res) => {
+          this.dashboard = res.data;
+          console.log(this.dashboard)
+          this.$topprogressbar.finish(), 1000;
+        })
+        .catch(() => {
+          this.$topprogressbar.fail();
+        });
+    },
+  },
+  created() {
+    this.getDashboard();
   },
 }
 </script>

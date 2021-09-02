@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-collapse" :class="isVisibleSidebar && 'show'">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block  sidebar">
-      <div class="sidebar-sticky pt-2">
+      <div class="pt-2">
         <ul class="nav flex-column">
           <template v-for="(node, indexRoot) in MenuSchema">
             <template v-if="node.labelHeading">

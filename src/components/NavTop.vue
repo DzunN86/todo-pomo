@@ -24,13 +24,7 @@
           to="/"
           class="mx-auto text-white text-center text-decoration-none"
         >
-          <img
-            class="d-none d-lg-inline-block"
-            src="@/assets/logo.png"
-            alt="logo"
-            width="35"
-          />
-          <span class="title font-semibold text-md">Wanna Be</span>
+          <span class="title font-semibold text-md">📅 Wanna Be</span>
         </router-link>
       </div>
       <div style="position: absolute; right: 5px; top: 4px; display: flex">
@@ -46,7 +40,7 @@
               :aria-expanded="isVisibleDropdown ? 'true' : 'false'"
             >
               <img
-                src="@/assets/default-avatar.jpg"
+                src="@/assets/default-avatar.png"
                 class="user-image"
                 alt="user image"
               />
@@ -63,7 +57,7 @@
               </li> -->
               <!-- <hr style="margin-top: 0" /> -->
               <li role="presentation">
-                <router-link to="/logout" class="dropdown-item" role="menuitem"
+                <router-link to="/profile" class="dropdown-item" role="menuitem"
                   >Profile</router-link
                 >
               </li>
