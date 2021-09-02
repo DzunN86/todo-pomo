@@ -14,23 +14,20 @@
           <!-- <span class="ml-1">Add</span> -->
         </button>
       </div>
-      <div aria-label="Toolbar with button groups" class="d-block">
-        <div class="form-group">
-          <select
-            class="form-control form-control-sm"
-            id="exampleFormControlSelect1"
-          >
-            <option>All Activities</option>
-            <option>Work</option>
-            <option>Learn</option>
-            <option>Play</option>
-          </select>
-        </div>
+      <div class="d-block">
+        <button @click="$router.push('/addactivity')" class="btn btn-outline-success mb-2">
+          <fa-icon :icon="['fas', 'chart-bar']" />
+
+        <span class="ml-1">Statistik</span>
+        </button>
       </div>
     </div>
     <div class="list-group mb-4">
       <div v-for="(activity, index) in activities" :key="index">
-        <button @click="$router.push('viewactivity/' + activity.id)" class="list-group-item list-group-item-action">
+        <button
+          @click="$router.push('viewactivity/' + activity.id)"
+          class="list-group-item list-group-item-action"
+        >
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ activity.name }}</h5>
             <div>
@@ -38,7 +35,7 @@
               <small>{{ formatDate(activity.finish) }}</small>
             </div>
           </div>
-          <p class="mb-1">{{activity.desc}}</p>
+          <p class="mb-1">{{ activity.desc }}</p>
           <small>And some small print.</small>
         </button>
       </div>
@@ -46,19 +43,18 @@
 
     <div class="my-auto" v-if="activities.length == 0">
       <div v-if="!$store.state.loading">
-
-      <img
-        src="@/assets/empty-todo.svg"
-        class="mx-auto p-10 w-96"
-        alt="empty-todo"
-      />
-      <div class="text-center">
-        <h4>All Clear</h4>
-        <p class="text-muted">
-          Looks like everything's organized in the right place.
-        </p>
-      <button class="btn btn-primary btn-sm">Add</button>
-      </div>
+        <img
+          src="@/assets/empty-todo.svg"
+          class="mx-auto p-10 w-96"
+          alt="empty-todo"
+        />
+        <div class="text-center">
+          <h4>All Clear</h4>
+          <p class="text-muted">
+            Looks like everything's organized in the right place.
+          </p>
+          <button class="btn btn-primary btn-sm">Add</button>
+        </div>
       </div>
     </div>
   </div>
@@ -90,14 +86,14 @@ export default {
         })
         .catch((err) => {
           this.$store.commit("setLoading", false);
-          console.log(err)
+          console.log(err);
           this.$root.$emit("setNotif", {
             title: "Opps",
             message: "Data Tidak Ditemukan",
             type: "warning",
           });
         });
-    }
+    },
   },
 
   mounted() {

@@ -117,13 +117,12 @@ export default {
       this.$axios
         .post("/login", data, this.$store.commit("setLoading", true))
         .then((res) => {
-          console.log(res.data);
           this.$store.commit("setLoading", false);
           const token = res.data.token;
-          if (token) {
+          if (res.data.token) {
             this.$axios.defaults.headers["Authorization"] = token;
             this.$store.commit("setToken", token);
-            // this.$router.push({ path: "/" });
+            this.$router.push('/addactivity');
           }
         })
         .catch((err) => {

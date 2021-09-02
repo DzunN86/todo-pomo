@@ -16,7 +16,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">All Activities</h5>
-                  <h3 class="text-bold-600">{{dashboard.total.learn}}</h3>
+                  <h3 class="text-bold-600">2323</h3>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Work</h5>
-                  <h3 class="text-bold-600">{{dashboard.total.work}}</h3>
+                  <h3 class="text-bold-600">21</h3>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Learn</h5>
-                  <h3 class="text-bold-600">{{dashboard.total.learn}}</h3>
+                  <h3 class="text-bold-600">2323</h3>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Play</h5>
-                  <h3 class="text-bold-600">{{dashboard.total.play}}</h3>
+                  <h3 class="text-bold-600">22</h3>
                 </div>
               </div>
             </div>
@@ -126,73 +126,96 @@
 
     <div class="card">
       <div class="card-body">
-        <GChart
-      type="ColumnChart"
-      :data="chartData"
-      :options="$App.config.chartOptions.line"
-      style="height: 500px;"
-    />
+        <vue-chart
+          v-if="timeframe.rows.length > 0"
+          :columns="timeframe.columns"
+          :rows="timeframe.rows"
+          :options="timeframe.options"
+          chart-type="ComboChart"
+        />
       </div>
     </div>
   </div>
 </template>
 <script>
-import { GChart } from "vue-google-charts";
 export default {
-  components: {
-    GChart
-  },
+  components: {},
   data() {
-    return{
-      dashboard:{},
-      chartData: [
-        ["Year", "total", "Work", "Learn", "Play"],
-        ["2014", 100, 400, 200, 800],
-        ["2014", 100, 400, 200, 800],
-        ["2014", 100, 400, 200, 800],
-        ["2014", 100, 400, 200, 2000],
-        ["2014", 100, 400, 200, 800],
-        ["2014", 100, 400, 200, 500],
-        ["2014", 100, 400, 200, 700],
-      ],
-      chartOptions: {
-        chart: {
-          title: "Company Performance",
-          subtitle: "Sales, Expenses, and Profit: 2014-2017"
-        }
-      }
-    }
-  },
-  mounted () {
-    this.$topprogressbar.start();
- 
-    // Use setTimeout for demo
-    setTimeout(() => {
-      this.$topprogressbar.finish(), 1000
-    })
-  },
-
-  computed : {
-
+    return {
+      statistik: {},
+      timeframe: {
+        rows: [],
+        columns: [],
+        options: {
+          height: 400,
+          // title: "Statistik Harian Pendaftaran",
+          seriesType: "bars",
+          chartArea: {
+            left: 50,
+            top: 50,
+            right: 100,
+            buttom: 0,
+            height: "80%",
+          },
+          animation: {
+          startup: true,
+          duration: 1000,
+          easing: 'in',
+        },
+          backgroundColor: { fill: "transparent" },
+        },
+      },
+    };
   },
 
   methods: {
-    getDashboard() {
-      this.$topprogressbar.start();
-      this.$axios
-        .get("/stats")
-        .then((res) => {
-          this.dashboard = res.data;
-          console.log(this.dashboard)
-          this.$topprogressbar.finish(), 1000;
-        })
-        .catch(() => {
-          this.$topprogressbar.fail();
-        });
+    fetchData(data) {
+      if (data.total) this.statistik = data.total;
+
+      if (data.timeframe) {
+        try {
+          this.timeframe.rows = [];
+          this.timeframe.columns = [
+            { type: "string", label: "Timeframe" },
+            { type: "number", label: "Work" },
+            { type: "number", role: "annotation" },
+            { type: "number", label: "Learn" },
+            { type: "number", role: "annotation" },
+            { type: "number", label: "Play" },
+            { type: "number", role: "annotation" },
+            { type: "number", label: "Total" },
+            { type: "number", role: "annotation" },
+          ];
+          for (var key in data.timeframe) {
+            this.timeframe.rows.push([
+              data.timeframe[key].tanggal,
+              data.timeframe[key].category.work,
+              data.timeframe[key].category.work,
+              data.timeframe[key].category.learn,
+              data.timeframe[key].category.learn,
+              data.timeframe[key].category.play,
+              data.timeframe[key].category.play,
+              data.timeframe[key].total,
+              data.timeframe[key].total,
+            ]);
+          }
+        } catch (error) {
+          throw Error(error);
+        }
+      }
     },
   },
-  created() {
-    this.getDashboard();
+  mounted() {
+    this.$topprogressbar.start();
+    this.$axios
+      .get("/stats")
+      .then((res) => {
+        this.fetchData(res.data);
+        setTimeout(() => this.$topprogressbar.finish(), 500);
+      })
+      .catch(() => {
+        this.$topprogressbar.fail();
+      });
   },
-}
+};
 </script>

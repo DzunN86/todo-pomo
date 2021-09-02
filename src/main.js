@@ -8,10 +8,11 @@ import store from './store'
 import titleMixin from "./mixins/title";
 import config from "./config";
 
+import VueChart from 'vue-charts';
+
 import VueRouteMiddleware from "vue-route-middleware";
 import AuthMiddleware from "./router/middlewares/auth";
 import GuestMiddleware from "./router/middlewares/guest";
-
 
 
 import './assets/tailwind.css'
@@ -26,6 +27,8 @@ document.body.appendChild(bar.$el);
 Vue.prototype.$App = Object.freeze({
   config,
 });
+
+Vue.use(VueChart);
 
 Vue.config.productionTip = false
 

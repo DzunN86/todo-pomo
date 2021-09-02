@@ -28,11 +28,6 @@ export default [
         link: "/activities/play",
         icon: ["fas", "gamepad"],
       },
-      {
-        label: "Others",
-        link: "/activities/others",
-        icon: ["fas", "border-all"],
-      },
     ],
   },
 ];
