@@ -16,7 +16,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: "📌Wanna Be",
+        name: "Wanna Be",
         component: Home,
         meta: {
           middleware: ["GuestMiddleware"]

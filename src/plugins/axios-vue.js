@@ -6,7 +6,7 @@ import Config from "../config";
 const token = Store.state.token ? Store.state.token : undefined;
 
 const AxiosInstance = Axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: "https://salty-anchorage-33077.herokuapp.com/api",
   timeout: 10000,
   withCredentials: false,
   headers: {

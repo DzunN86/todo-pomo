@@ -16,7 +16,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">All Activities</h5>
-                  <h3 class="text-bold-600">2323</h3>
+                  <h3 class="text-bold-600">{{statistik.work + statistik.learn + statistik.play}}</h3>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Work</h5>
-                  <h3 class="text-bold-600">21</h3>
+                  <h3 class="text-bold-600">{{statistik.work}}</h3>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Learn</h5>
-                  <h3 class="text-bold-600">2323</h3>
+                  <h3 class="text-bold-600">{{statistik.learn}}</h3>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="media-body text-right">
                   <h5 class="text-light text-bold-500">Play</h5>
-                  <h3 class="text-bold-600">22</h3>
+                  <h3 class="text-bold-600">{{statistik.play}}</h3>
                 </div>
               </div>
             </div>

@@ -36,7 +36,9 @@
             </div>
           </div>
           <p class="mb-1">{{ activity.desc }}</p>
-          <small>And some small print.</small>
+          <small class="badge badge-success" v-if="activity.category_id == 1">Work</small>
+          <small class="badge badge-danger" v-if="activity.category_id == 2">Learn</small>
+          <small class="badge badge-primary" v-if="activity.category_id == 3">Play</small>
         </button>
       </div>
     </div>
@@ -53,7 +55,7 @@
           <p class="text-muted">
             Looks like everything's organized in the right place.
           </p>
-          <button class="btn btn-primary btn-sm">Add</button>
+          <button class="btn btn-primary btn-sm" @click="$router.push('/addactivity')">Add</button>
         </div>
       </div>
     </div>

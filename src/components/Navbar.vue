@@ -4,10 +4,10 @@
     <div class="inline-flex">
             <button @click="$router.push('/')">
           <div class="hidden md:block">
-                <span class="text-2xl font-bold">📅 WannaBe</span>
+              <img src="@/assets/logo-text.png" alt="Nekoding" class="w-48" />
             </div>
             <div class="block md:hidden">
-                <span class="text-2xl uppercase font-bold">📅 Todo.</span>
+              <img src="@/assets/logo.png" alt="Nekoding" class="w-16" />
             </div>
             </button>
     </div>

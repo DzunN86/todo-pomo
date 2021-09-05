@@ -15,7 +15,7 @@
         </button>
       </div>
       <div class="d-block">
-        <button @click="$router.push('/addactivity')" class="btn btn-outline-success mb-2">
+        <button @click="$router.push('/')" class="btn btn-outline-success mb-2">
           <fa-icon :icon="['fas', 'chart-bar']" />
 
         <span class="ml-1">Statistik</span>
@@ -36,7 +36,9 @@
             </div>
           </div>
           <p class="mb-1">{{ activity.desc }}</p>
-          <small>And some small print.</small>
+          <small class="badge badge-success" v-if="activity.category_id == 1">Work</small>
+          <small class="badge badge-danger" v-if="activity.category_id == 2">Learn</small>
+          <small class="badge badge-primary" v-if="activity.category_id == 3">Play</small>
         </button>
       </div>
     </div>
@@ -78,7 +80,7 @@ export default {
       this.$store.commit("setLoading", true);
 
       this.$axios
-        .get("/activity")
+        .get("/activbycat/2")
         .then((res) => {
           this.$store.commit("setLoading", false);
           this.activities = res.data.data;

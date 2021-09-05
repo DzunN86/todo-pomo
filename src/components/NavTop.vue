@@ -24,7 +24,8 @@
           to="/"
           class="mx-auto text-white text-center text-decoration-none"
         >
-          <span class="title font-semibold text-md">📅 Wanna Be</span>
+        
+          <span class="title font-semibold text-md"> <img src="@/assets/logo-text.png" alt="Nekoding" /></span>
         </router-link>
       </div>
       <div style="position: absolute; right: 5px; top: 4px; display: flex">

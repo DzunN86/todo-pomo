@@ -27,9 +27,9 @@
                     id="category"
                     v-model="form.category"
                   >
-                    <option value="1">Work</option>
-                    <option value="2">Learn</option>
-                    <option value="3">Play</option>
+                    <option value="3">Work</option>
+                    <option value="4">Learn</option>
+                    <option value="5">Play</option>
                   </select>
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default {
           desc: this.form.desc,
           start: this.form.start,
           finish: this.form.finish,
-          user_id: 1,
+          user_id: 3,
           category_id: this.form.category,
         };
 

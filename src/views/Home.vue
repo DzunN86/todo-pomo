@@ -8,7 +8,7 @@
                 <h1 class="font-light mb-2 lg:leading-10 md:mb-5">
                     <div class="text-4xl md:text-6xl mb-1 capitalize">
                         <div class="text-white inline-block bg-clip-text text-transparent font-bold tracking-tight leading-snug">
-                            Organize it all with Todoist
+                            Organize it all with WannaBe
                         </div>
                     </div>
                 </h1>

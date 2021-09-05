@@ -8,9 +8,9 @@
         >
           <div class="w-full lg:w-3/5">
             <div class="text-center text-white">
-              <h1 class="text-5xl font-bold mb-4">Ayo Register!</h1>
+              <h1 class="text-5xl font-bold mb-4">Register!</h1>
               <span class="text-xl font-normal text-gray-200"
-                >Kami sudah menantimu, John Doe</span
+                >Manage all your todo efficiently</span
               >
             </div>
             <div class="relative py-3 sm:max-w-xl sm:mx-auto hidden lg:block">
